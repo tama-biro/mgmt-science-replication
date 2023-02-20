@@ -1,0 +1,8 @@
+Notes on reproducibility
+
+- README clear and specifies what results come from where in data
+- For reproducibility, nice to give questions numbers so variable name does not need to be a paragraph
+- Data structure unsuitable for tools other than excel (hidden columns with notes on uncertain answers, 5.1, 10.1)
+- For subject 3, no data for q5 and 5-10% on q6
+- Further no mention of how above point was handled in README or article
+- Ranges on p5149 not referred to in README
