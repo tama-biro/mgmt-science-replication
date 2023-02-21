@@ -1,5 +1,7 @@
 Notes on reproducibility
+-----------------------------
 
+Notes on data
 - README fairly clear and specifies what results come from where in data
 - For reproducibility, nice to give questions numbers so variable name does not need to be a paragraph
 - Data structure unsuitable for tools other than excel (hidden columns with notes on uncertain answers, 5.1, 10.1)
@@ -9,3 +11,6 @@ Notes on reproducibility
 - When properly setting up data removing hidden columns and q5-6, means and medians all match
 - Ranges on p5149 not referred to in README
 - Wrong minimum number of projects (15 not 25)
+
+Notes on figures
+- some figure axes texts not identical to figures in excel file (might have changed somewhere else)
