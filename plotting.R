@@ -1,10 +1,12 @@
 library(tidyverse)
 
+# Set working directory to repo
+repo_path <- dirname(rstudioapi::getActiveDocumentContext()$path)
+setwd(repo_path)
 
 filepath <- './data/processed_data.csv'
 
 data <- read.csv(filepath)
-
 
 
 # Figure 1.1 - avg dist of project lifetime
@@ -32,6 +34,8 @@ ggplot(data_plot1.1, aes(x = Choices, y = avg)) +
   theme_minimal() +
   theme(panel.grid.major.x = element_blank(),
         panel.grid.minor.y = element_blank())
+
+ggsave('./plots/figure1.1.png', width = 8, height = 6)
 
 
 # Figure 1.2 - dist probability renegotiate
@@ -62,6 +66,8 @@ Probability to Renegotiate') +
   theme(panel.grid.major.x = element_blank(),
         panel.grid.minor.y = element_blank())
 
+ggsave('./plots/figure1.2.png', width = 8, height = 6)
+
 
 # Figure 2 - Reasons why price negotiate
 data_plot2 <- data %>%
@@ -83,6 +89,9 @@ ggplot(data_plot2, aes(x = avg, y = Choices)) +
   theme_minimal() +
   theme(panel.grid.major.y = element_blank(),
         panel.grid.minor.x = element_blank())
+
+ggsave('./plots/figure2.png', width = 8, height = 6)
+
 
 # Figure 3.1 - How frequent index could be used
 data_plot3.1 <- data %>%
@@ -111,6 +120,9 @@ ggplot(data_plot3.1, aes(x = x, y = count)) +
   theme(panel.grid.major.x = element_blank(),
         panel.grid.minor.y = element_blank())
 
+ggsave('./plots/figure3.1.png', width = 8, height = 6)
+
+
 # Figure 3.2 - How frequent index was used
 data_plot3.2 <- data %>%
   filter(question_number == 3) %>%
@@ -137,6 +149,9 @@ ggplot(data_plot3.2, aes(x = x, y = count)) +
   theme_minimal() +
   theme(panel.grid.major.x = element_blank(),
         panel.grid.minor.y = element_blank())
+
+ggsave('./plots/figure3.2.png', width = 8, height = 6)
+
 
 # Figure 4 - How often supplier switched
 data_plot4 <- data %>%
@@ -173,6 +188,9 @@ a Supplier Is Switched During the Lifetime of a Project') +
   theme(panel.grid.major.x = element_blank(),
         panel.grid.minor.y = element_blank())
 
+ggsave('./plots/figure4.png', width = 8, height = 6)
+
+
 # Figure 5 - Prevalence of auction formats
 data_plot5 <- data %>%
   filter(question_number == 9) %>%
@@ -193,6 +211,9 @@ ggplot(data_plot5, aes(x = avg, y = Choices)) +
   theme_minimal() +
   theme(panel.grid.major.y = element_blank(),
         panel.grid.minor.x = element_blank())
+
+ggsave('./plots/figure5.png', width = 8, height = 6)
+
 
 # Figure 6 - Importance of fixing prices in advance
 data_plot6 <- data %>%
@@ -215,4 +236,6 @@ Renegotiation') +
   theme_minimal() +
   theme(panel.grid.major.y = element_blank(),
         panel.grid.minor.x = element_blank())
+
+ggsave('./plots/figure6.png', width = 8, height = 6)
 
